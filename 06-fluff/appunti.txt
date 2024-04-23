@@ -1,0 +1,45 @@
+## Assembly register
+- [x] rbx: Preserved register: don't use it without saving it!
+    Type: preserved 
+      * 64bit: rbx
+      * 32bit: ebx
+      * 16bit: bx 
+      * 8bit: bh and bl
+
+- [x] rcx: Typical scratch register.
+    Some instructions also use it as a counter.
+    Type: scratch.
+      * 64bit: rcx	
+      * 32bit: ecx	
+      * 16bit: cx	
+      * 8bit: ch and cl
+
+- [x] rdx: Scratch register.
+    Type: scratch
+
+      * 64bit: rdx 
+      * 32bit: edx
+      * 16bit: dx
+      * 8bit: dh and dl
+
+## Assembly instruction
+- [x] bextr: Bit Field Extract 
+  Extracts contiguous bits.
+      
+      bextr rbx, rcx, rdx ; ret
+
+      - rbx : destination
+      - rcx : extraction source
+      - rdx : first byte is the START point, second byte is the LEN
+      
+      Say the starting bit is 5 and the length is 9. Then if we have:
+      Input : 11010010001110101010110011011010 = 0xd23aacda
+                                |-------|
+                                   \
+                                    \
+                                     \
+                                      v
+                                    |-------|
+      Output: 00000000000000000000000101100110 = 0x00000166
+
+- [] 
