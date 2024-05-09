@@ -31,7 +31,15 @@
       - rbx : destination
       - rcx : extraction source
       - rdx : first byte is the START point, second byte is the LEN
-      
+
+      + rbx => address where to write in mem.
+      + rcx => address where to read in mem.
+      + rdx => mask LEN | START 
+        {
+          LEN:    00000000 
+          START:  00000000
+        }
+
       Say the starting bit is 5 and the length is 9. Then if we have:
       Input : 11010010001110101010110011011010 = 0xd23aacda
                                 |-------|
